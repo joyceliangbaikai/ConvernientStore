@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class WaypointGraph : MonoBehaviour
 {
-    public float stepDistance = 1.5f;   // 一格多远
-    public float tolerance = 0.35f;     // 容差（点没摆很准也没事）
+    public float stepDistance = 4f;   // 一格多远
+    public float tolerance = 1f;     // 容差（点没摆很准也没事）
     public Transform waypointsRoot;     // 你的 WP 父物体（拖进来）
     public bool useLineOfSight = false; // 先关掉，后面再加墙体遮挡检测
 
