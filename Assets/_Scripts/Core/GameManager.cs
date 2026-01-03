@@ -11,6 +11,19 @@ public class GameManager : MonoBehaviour
 
     [Header("Shopping List Settings")]
     public int shoppingListCount = 3; // 每局要买几个
+    private HashSet<string> collectedIds = new HashSet<string>();
+
+    public void OnItemCollected(ItemData item)
+    {
+        if (item == null) return;
+        if (string.IsNullOrEmpty(item.id)) item.id = item.displayName; // 兜底
+
+        if (collectedIds.Add(item.id))
+        {
+            Debug.Log($"[GameManager] Collected: {item.displayName}");
+            // 以后你要“拿到麦片触发熄灯”就写在这里
+        }
+    }
 
     void Awake()
     {
